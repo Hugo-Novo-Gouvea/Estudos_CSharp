@@ -1,0 +1,11 @@
+# Ignorar pastas de build (O que o compilador gera)
+bin/
+obj/
+
+# Ignorar configurações do VS Code (Sua máquina local)
+.vscode/
+
+# Ignorar arquivos temporários e de usuário
+*.user
+*.suo
+*.userprefs
