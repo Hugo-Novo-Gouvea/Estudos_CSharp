@@ -1,6 +1,8 @@
 ﻿string nome;
 int opcao = 0;
 
+string[] clientes = {"Hugo", "Carlos", "Claudia"};
+
 Console.Write("Bem vindo ao Banco! Por favor, informe seu nome: ");
 nome = Console.ReadLine() ?? "";
 
@@ -8,7 +10,7 @@ do
 {
     
     opcao = ExibirMenu();
-    CanalSelecionado(opcao, nome);
+    CanalSelecionado(opcao, nome, clientes);
     
 }
 while (opcao != 4);
@@ -27,6 +29,7 @@ static int ExibirMenu()
     Console.WriteLine("=        2 - Suporte Técnico         =");
     Console.WriteLine("=        3 - Financeiro              =");
     Console.WriteLine("=        4 - Sair                    =");
+    Console.WriteLine("=        5 - Listar Clientes(Admin)  =");
     Console.WriteLine("=                                    =");
     Console.WriteLine("======================================");
     Console.WriteLine("");
@@ -42,7 +45,7 @@ static int ExibirMenu()
     return opcao;
 }
 
-static void CanalSelecionado(int opcao, string nome)
+static void CanalSelecionado(int opcao, string nome, string[] clientes)
 {
     switch(opcao)
     {
@@ -58,6 +61,12 @@ static void CanalSelecionado(int opcao, string nome)
         case 4:
             Console.WriteLine($"Encerrando aplicação. Tchau! [{nome}]");
             break; 
+        case 5:
+            for(int i = 0; i < clientes.Length; i++)
+            {
+                Console.WriteLine($"Cliente número {i}; {clientes[i]}");
+            }
+            break;
         default:
             Console.WriteLine("Opção não disponivel no momento");
             break;
@@ -69,8 +78,3 @@ static void CanalSelecionado(int opcao, string nome)
         Console.ReadKey();
     }
 }
-
-
-
-
-
