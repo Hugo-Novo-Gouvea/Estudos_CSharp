@@ -1,44 +1,41 @@
 public class Cliente
 {
-    public string? Nome;
-    public string? Cpf;
-    private decimal? Saldo;
+    // === PROPRIEDADES (O Jeito Moderno) ===
+    // Note que agora usamos PascalCase (Primeira letra Maiúscula)
+    
+    public string Nome { get; set; }
+    public string Cpf { get; set; }
 
-    public Cliente(string nomeInicial, string cpfInicial)
+    // O Pulo do Gato: 
+    // Todo mundo vê (get público), mas só a classe mexe (set privado)
+    public decimal Saldo { get; private set; }
+
+    // === CONSTRUTOR ===
+    public Cliente(string nome, string cpf)
     {
-        this.Nome = nomeInicial;
-        this.Cpf = cpfInicial;
-        this.Saldo = 0;
+        // Como as propriedades são variáveis, atribuímos igualzinho
+        this.Nome = nome;
+        this.Cpf = cpf;
+        this.Saldo = 0; // O set privado permite mexer AQUI DENTRO
     }
 
-    public void ExibirDados()
-    {
-        Console.WriteLine($"Cliente: {this.Nome} | Saldo: {this.Saldo:C}");
-    }
-
+    // === MÉTODOS ===
     public void Depositar(decimal valor)
     {
-        if(valor > 0)
-        {
-            this.Saldo += valor;
-            Console.WriteLine($"Depósito de {valor:C} realizado com sucesso.");
-        }
-        else
-        {
-            Console.WriteLine("Valor de depósito inválido.");   
-        }
+        // O set privado permite mexer AQUI DENTRO
+        this.Saldo += valor;
     }
 
     public void Sacar(decimal valor)
     {
-        if(valor > 0 && valor <= this.Saldo)
+        if(valor <= this.Saldo)
         {
             this.Saldo -= valor;
-            Console.WriteLine($"Saque de {valor:C} realizado.");
         }
-        else
-        {
-            Console.WriteLine("Saldo insuficiente ou valor inválido.");
-        }
+    }
+
+    public void ExibirDados()
+    {
+        Console.WriteLine($"Cliente: {Nome} | CPF: {Cpf} | Saldo: {Saldo:C}");
     }
 }
