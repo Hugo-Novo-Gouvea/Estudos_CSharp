@@ -1,6 +1,6 @@
-# 🚀 Jornada de Estudos .NET / C#
+# 🚀 Jornada de Estudos C#
 
-Este repositório documenta minha trajetória completa de aprendizado em **C# e .NET**, partindo da lógica de programação básica até a construção de um sistema bancário funcional com persistência de dados e Orientação a Objetos.
+Este repositório documenta minha trajetória adicional de estudos em **C#, partindo da lógica de programação básica até a construção de um sistema bancário funcional com persistência de dados e Orientação a Objetos.
 
 ## 🛠️ Tecnologias e Ferramentas
 * **Linguagem:** C# (C-Sharp)
