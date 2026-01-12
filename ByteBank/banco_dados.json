@@ -1,0 +1,20 @@
+[
+  {
+    "NumeroConta": 5596,
+    "Saldo": 799.00,
+    "Titular": {
+      "Nome": "Hugo",
+      "Cpf": "111",
+      "Senha": "123"
+    }
+  },
+  {
+    "NumeroConta": 5879,
+    "Saldo": 200,
+    "Titular": {
+      "Nome": "Juliana",
+      "Cpf": "222",
+      "Senha": "123"
+    }
+  }
+]
